@@ -10,5 +10,7 @@ class CalcTestCase(TestCase):
     def test_case2_add_two_terms(self):
         self.assertEqual(calc("1+2"), 3.0)
 
-    def test_case3_1_add_more_terms(self):
-        self.assertEqual(calc("1+2+3"), 6.0)
+    def test_case3_add_more_terms(self):
+        for expression, expected in (("1+2+3", 6.0), ("1+2+3+4", 10.0)):
+            with self.subTest(expression=expression, expected=expected):
+                self.assertEqual(calc(expression), expected)
