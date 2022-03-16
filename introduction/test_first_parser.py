@@ -9,3 +9,6 @@ class CalcTestCase(TestCase):
 
     def test_case2_add_two_terms(self):
         self.assertEqual(calc("1+2"), 3.0)
+
+    def test_case3_1_add_more_terms(self):
+        self.assertEqual(calc("1+2+3"), 6.0)
