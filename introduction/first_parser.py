@@ -1,2 +1,2 @@
 def calc(s):
-    raise NotImplementedError
+    return float(s)
