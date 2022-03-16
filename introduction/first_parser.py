@@ -5,5 +5,5 @@ def calc(s):
     if pos > 0:
         left = s[:pos]
         right = s[pos + 1 :]
-        return float(left) + float(right)
+        return calc(left) + calc(right)
     return float(s)
