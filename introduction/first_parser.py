@@ -1,4 +1,11 @@
 def calc(s):
+    # -は左結合にしたいので、左について先に再帰でcalcを呼ぶために右から探す
+    pos = s.rfind("-")
+    if pos > 0:
+        left = s[:pos]
+        right = s[pos + 1 :]
+        return calc(left) - calc(right)
+
     # +と*では*が先に計算される（*について先に再帰でcalcを呼び出す）ように、+の処理が先
     pos = s.find("+")
     # 見つからなければ-1、先頭で見つかる(0)はありえない
