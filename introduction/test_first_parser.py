@@ -19,3 +19,6 @@ class CalcTestCase(TestCase):
         for expression, expected in (("1+2*3", 7.0), ("1*2+3", 5.0)):
             with self.subTest(expression=expression, expected=expected):
                 self.assertEqual(calc(expression), expected)
+
+    def test_case5_subtract(self):
+        self.assertEqual(calc("1-2"), -1.0)
